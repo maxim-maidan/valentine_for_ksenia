@@ -17,7 +17,7 @@ body {
   font-size: 50px;
 }
 .pp {
-  font-size: 30px;
+  font-size: 20px;
   font-style: oblique;
   font-weight: 800;
 }
@@ -107,7 +107,7 @@ body .container {
 
 @media (min-width: 576px) {
   .pp {
-    font-size: 40px;
+    font-size: 25px;
   }
 
   .hh {
