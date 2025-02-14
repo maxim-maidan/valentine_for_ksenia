@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ Люблю тебе Ксенічка ❤️</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="Mainprompt">
+            <img class="image" src="images/cute.gif"></img>
+            <div class="text">
+              <h1 class="hh" id="name">Привіт, Ксенічка❤️!</h1>
+              <p class="pp" id="question">Ти будеш моєю валентинкою? </p>
+            </div>
+            <div class="buttons">
+                <button class="button no" id="no-button" onclick="showMessage('No')">Ні</button>
+                <button class="button yes"  onclick="showMessage('Yes')" id="yesButton">Так</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+      const button = document.getElementById('no-button');
+
+      button.addEventListener('mouseenter', function() {
+          showMessage('No')
+      });
+
+      function showMessage(response) {
+  if (response === "No") {
+    const noButton = document.getElementById("no-button");
+    const container = document.querySelector(".container");
+    const maxWidth = window.innerWidth - noButton.offsetWidth;
+    const maxHeight = window.innerHeight - noButton.offsetHeight;
+
+    noButton.style.position = "absolute";
+
+    document.getElementsByClassName("image")[0].src = "images/gun.gif";
+
+    const randomX = Math.max(0, Math.floor(Math.random() * maxWidth));
+    const randomY = Math.max(0, Math.floor(Math.random() * maxHeight));
+
+    noButton.style.left = randomX + "px";
+    noButton.style.top = randomY + "px";
+
+    document.getElementById("question").textContent =
+      "Альо, ти що там задумала?";
+    document.getElementById("name").style.display = "none";
+
+  }
+
+  if (response === "Yes") {
+    document.getElementById("name").remove();
+    document.getElementById("no-button").remove();
+
+    const yesMessage = document.getElementById("question");
+    yesMessage.textContent = "Дуже тебе люблю, сонечко. Коли я думаю про тебе то ловлю метеликів в животі. З тобою кожен мій день стає яскравим. Коли ми разом то я відчуваю себе найщасливішим на світі. Дякую тобі за це 😍😍😍";
+    yesMessage.style.display = "block";
+    yesMessage.style.fontStyle = "normal";
+    document.getElementsByClassName("image")[0].src = "images/kiss.gif";
+
+    document.getElementById("yesButton").remove();
+  }
+}
+    </script>
+
+  <audio autoplay>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+</body>
+
+</html>
